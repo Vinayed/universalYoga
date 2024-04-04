@@ -262,13 +262,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
             @Override
             public void onResponse(Call<AddClassModel> call, Response<AddClassModel> response) {
                 if (response.isSuccessful()){
-//                    addClassDataModel1 = response.body();
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    String yogaClassId = addClassDataModel1.getId();
-//                    editor.putString(YOGA_CLASS_ID, yogaClassId);
-//                    Log.e("onResponsexxxId",addClassDataModel1  + "cdc");
-//                    sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-//                    editor.apply();
                     ArrayList<AddClassModel> dataList = new ArrayList<>();
                     AddClassModel addClassModel1 = response.body();
                     dataList.add(addClassModel1);

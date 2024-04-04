@@ -24,7 +24,6 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.MyViewHo
         this.bookingDataModelList = bookingDataModel;
         this.context = context;
         notifyDataSetChanged();
-        Log.e("BookingAdaptexx", bookingDataModel + "cd");
     }
 
     @NonNull

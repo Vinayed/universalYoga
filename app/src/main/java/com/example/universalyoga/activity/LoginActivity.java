@@ -92,26 +92,6 @@ public class LoginActivity extends AppCompatActivity {
             } else if (passwordStr.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Please enter your Password", Toast.LENGTH_SHORT).show();
             }
-//            sqlDatabse login
-//            else if (loginCheck(cursor,emailStr,passwordStr)) {
-//                SharedPreferences.Editor editor = sharedpreferences.edit();
-//                editor.putString(EMAIL_KEY, binding.emailEt.getText().toString().trim());
-//                editor.putString(PASSWORD_KEY, passwordStr);
-//                sharedpreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-//                editor.apply();
-//
-//                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-//                intent.putExtra("email",emailStr);
-//                binding.emailEt.setText("");
-//                binding.passwordEt.setText("");
-//                startActivity(intent);
-//            }else {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-//                builder.setCancelable(true);
-//                builder.setTitle("Wrong Credential");
-//                builder.setMessage("Wrong Credential");
-//                builder.show();
-//            }
             else {
                 loginRequest();
             }
@@ -171,7 +151,6 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<LoginModel> call, Throwable t) {
                     Toast.makeText(LoginActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.e("onFailureLogin", t.getMessage().toString() + "notWork");
                 }
             });
         } catch (JSONException e) {

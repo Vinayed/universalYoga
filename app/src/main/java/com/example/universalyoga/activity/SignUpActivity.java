@@ -59,12 +59,6 @@ public class SignUpActivity extends AppCompatActivity {
             }else if (passwordStr == confirmPassStr){
                 Toast.makeText(SignUpActivity.this, "Confirm Password is incorrect", Toast.LENGTH_SHORT).show();
             }
-//            sql save data
-//            else if (b){
-//                Toast.makeText(SignUpActivity.this, "Data inserted", Toast.LENGTH_SHORT).show();
-//                Intent i = new Intent(SignUpActivity.this, LoginActivity.class);
-//                startActivity(i);
-//            }
             else {
                 signupRequest();
             }

@@ -35,7 +35,6 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 sharedpreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
                 String email = sharedpreferences.getString("email_key", "defaultValue");
-//                Cursor cursor = dbHandler.getData();
                 if (email == "defaultValue" || email == null){
                     Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(i);

@@ -70,11 +70,8 @@ public class AddClassFragment extends Fragment {
     public void init(){
         sharedpreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         bookingId = sharedpreferences.getString("BOOKING_ID", null);
-        Log.e( "initbookingId", bookingId + "dc");
         userId = sharedpreferences.getString("USERID", null);
         Day = sharedpreferences.getString("day", null);
-        Log.e( "initngId", dateStr + "dc");
-
         Timing = sharedpreferences.getString("Timing", null);
         Capacity = sharedpreferences.getString("Capacity", null);
         Duration = sharedpreferences.getString("Duration", null);
@@ -86,10 +83,6 @@ public class AddClassFragment extends Fragment {
         list = new ArrayList();
         dbHandler = new DBHandler(getContext());
         list = dbHandler.readData();
-
-//        for (int i =1; i < list.size(); i++){
-//            binding.courseTv.setText(list.get(i).getTypeOfClass());
-//        }
         binding.courseTv.setText(Constant.COURSE_NAME);
         binding.submitClickTv.setOnClickListener(view -> {
             dateStr =  binding.dateTv.getText().toString().trim();
@@ -146,8 +139,6 @@ public class AddClassFragment extends Fragment {
         Map<String, String> putDataParams = new HashMap<>();
         putDataParams.put("param1", Constant.BOOKING_ID);
         putDataParams.put("param2", Constant.COURSE_ID);
-        Log.e("addClassRequesxxx", bookingId + "cd");
-
         JSONObject jsonObject = new JSONObject();
         try {
             // Add key-value pairs to the JSON object
@@ -168,7 +159,6 @@ public class AddClassFragment extends Fragment {
             e.printStackTrace();
         }
         requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
-        Log.e("addClassRequesxx", requestBody + "xcxc");
         Call<AddYogaCourseDataModel> call = apiInterface.editClassesDataByAdmin(bookingId, requestBody);
         call.enqueue(new Callback<AddYogaCourseDataModel>() {
             @Override
